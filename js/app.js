@@ -300,7 +300,7 @@
     }
 
     function setFilename(filename) {
-      fileLink.download = filename + '.jh';
+      fileLink.download = filename + '.kukulkan';
       imgLink.download = filename + '.png';
     }
 

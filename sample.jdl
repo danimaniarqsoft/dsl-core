@@ -1,112 +1,27 @@
-entity Region {
-	regionName String
+entity Persona {
+	nombre String required minlength(3) maxlength(50),
+    primerApellido String required minlength(3) maxlength(50),
+    segundoApellido String minlength(3) maxlength(50),
+    edad Integer,
+    sexo Sexo,
+    correo String required minlength(2) maxlength(50),
+	telefono String,
 }
 
-entity Country {
-	countryName String
+entity Direccion {
+	delegacion String required minlength(3) maxlength(50),
+    avenida String required minlength(3) maxlength(50),
+    numInterior Integer,
+    codigoPostal Integer,
 }
 
-// an ignored comment
-/** not an ignored comment */
-entity Location {
-	streetAddress String,
-	postalCode String,
-	city String,
-	stateProvince String
+enum Sexo {
+	MUJER, HOMBRE
 }
 
-entity Department {
-	departmentName String required
-}
-
-/**
- * Task entity.
- * @author The JHipster team.
- */
-entity Task {
-	title String,
-	description String
-}
-
-/**
- * The Employee entity.
- */
-entity Employee {
-	/**
-	* The firstname attribute.
-	*/
-	firstName String,
-	lastName String,
-	email String,
-	phoneNumber String,
-	hireDate ZonedDateTime,
-	salary Long,
-	commissionPct Long
-}
-
-entity Job {
-	jobTitle String,
-	minSalary Long,
-	maxSalary Long
-}
-
-entity JobHistory {
-	startDate ZonedDateTime,
-	endDate ZonedDateTime,
-	language Language
-}
-
-enum Language {
-    FRENCH, ENGLISH, SPANISH
-}
-
-relationship OneToOne {
-	Country{region} to Region
-}
-
-relationship OneToOne {
-	Location{country} to Country
-}
-
-relationship OneToOne {
-	Department{location} to Location
-}
-
-relationship ManyToMany {
-	Job{task(title)} to Task{job}
-}
-
-// defining multiple OneToMany relationships with comments
 relationship OneToMany {
-	Employee{job} to Job,
-	/**
-	* A relationship
-	*/
-	Department{employee} to
-	/**
-	* Another side of the same relationship
-	*/
-	Employee
+	Persona{direccion} to Direccion
 }
 
-relationship ManyToOne {
-	Employee{manager} to Employee
-}
-
-// defining multiple oneToOne relationships
-relationship OneToOne {
-	JobHistory{job} to Job,
-	JobHistory{department} to Department,
-	JobHistory{employee} to Employee
-}
-
-// Set pagination options
-paginate JobHistory, Employee with infinite-scroll
-paginate Job with pagination
-
-dto * with mapstruct
-
-// Set service options to all except few
-service all with serviceImpl except Employee, Job
-// Set an angular suffix
-angularSuffix * with mySuffix
+ paginate Persona, Direccion with pagination
+ service all with serviceImpl except Employee, Job

@@ -20,7 +20,7 @@ var nomnoml = nomnoml || {};
 			padding: (+d.padding) || 8,
 			spacing: (+d.spacing) || 70,
 			stroke: d.stroke || '#aaaaaa',
-			title: d.title || 'jhipster-jdl',
+			title: d.title || 'dsl-model',
 			zoom: +d.zoom || 1
 		};
 	}

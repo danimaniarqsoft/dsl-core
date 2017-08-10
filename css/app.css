@@ -5,7 +5,7 @@ html, body {
     margin: 0;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	background: rgb(40, 44, 52);
+	background: rgb(255, 255, 255);
 	font-weight: 100;
 }
 hr {
@@ -100,7 +100,7 @@ header {
 }
 
 .CodeMirror .CodeMirror-linenumber {
-  color: #3E4350;
+  color: #ccc;
   padding-left: 12px
 }
 .canvas-mode .CodeMirror {
@@ -108,7 +108,7 @@ header {
 	transition: opacity 1s;
 }
 .tools i {
-	color: #fdf6e3;
+	color: #586e75;
 	font-size: 1.2em;
 }
 .canvas-tools i {
