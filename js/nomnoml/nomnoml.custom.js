@@ -11,15 +11,15 @@ var nomnoml = nomnoml || {};
 			gutter: +d.gutter || 5,
 			edgeMargin: (+d.edgeMargin) || 0,
 			edges: { hard: 'hard', rounded: 'rounded' }[d.edges] || 'rounded',
-			fill: (d.fill || '#21252b;#002b36;#21252b;#002b36').split(';'),
+			fill: (d.fill || '#ecf0f1;#002b36;#21252b;#ecf0f1').split(';'),
 			fillArrows: d.fillArrows === 'true',
-			font: d.font || 'Calibri',
+			font: d.font || 'arial',
 			fontSize: (+d.fontSize) || 12,
 			leading: (+d.leading) || 1.25,
 			lineWidth: (+d.lineWidth) || 2,
 			padding: (+d.padding) || 8,
 			spacing: (+d.spacing) || 70,
-			stroke: d.stroke || '#aaaaaa',
+			stroke: d.stroke || '#2c3e50',
 			title: d.title || 'dsl-model',
 			zoom: +d.zoom || 1
 		};
